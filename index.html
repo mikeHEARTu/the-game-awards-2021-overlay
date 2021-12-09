@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Social media carousel for twitch.tv/aznmike during the 2021 E3 costreams">
+	<meta name="keywords" content="twitch, overlay">
+	<meta name="author" content="mikeheartu">
+	<title>video games are awful</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/all.css">
+</head>
+
+<script>
+	var slideIndex = 0;
+
+	function carousel() {
+	var i;
+	var x = document.getElementsByClassName("textContainer");
+	for (i = 0; i < x.length; i++) {
+	x[i].style.display = "none";
+	}
+	slideIndex++;
+	if (slideIndex > x.length) {slideIndex = 1}
+	x[slideIndex-1].style.display = "flex";
+	setTimeout(carousel, 15000); // Change image every 15 seconds
+	}
+</script>
+
+<body onload="carousel()">
+	<div class="webContainer">
+		<div class="textContainer">
+			<span class="textHeader">Michael Macasiano</span>
+			<span class="textSubtitle"><i class="fab fa-twitter textIcon"></i>mikeHEARTu</span>
+		</div>
+
+		<div class="textContainer">
+			<span class="textHeader">Nelson Whittico</span>
+			<span class="textSubtitle"><i class="fab fa-twitter textIcon"></i>Whittico</span>
+		</div>
+
+		<div class="textContainer">
+			<span class="textHeader">The Game Awards</span>
+			<span class="textSubtitle"><i class="fas fa-gamepad textIcon"></i>now watching</span>
+		</div>
+	</div>
+</body>
+
+</html>
